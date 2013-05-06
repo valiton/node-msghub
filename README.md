@@ -1,6 +1,8 @@
 # msghub
 
-A simple communication layer for inter-process communcation between mulitple worker processes
+A simple communication layer for inter-process communcation between mulitple worker processes in a clustered environment.
+
+This module works best in combination with the [various-cluster](https://npmjs.org/package/various-cluster) module
 
 ## Getting Started
 
@@ -70,6 +72,8 @@ msghub.roundrobin('my-event-listener', 'just a simple message');
 In lieu of a formal styleguide, take care to maintain the existing coding style. Lint your code using [Grunt](http://gruntjs.com/)
 
 ## Release History
+
+- 0.1.1 add hint to various-cluster to readme
 
 - 0.1.0 Initial Release
 

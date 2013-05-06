@@ -1,11 +1,23 @@
 {
   "name": "msghub",
   "description": "A simple communication layer for inter-process communcation between mulitple worker processes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Valiton GmbH",
     "url": "http://www.valiton.com"
   },
+  "contributors": [
+    {
+      "name": "Bastian Behrens",
+      "email": "bastian.behrens@valiton.com"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "Bastian Behrens",
+      "email": "bastian.behrens@valiton.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/valiton/node-msghub.git"
