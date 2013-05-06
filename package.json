@@ -1,0 +1,40 @@
+{
+  "name": "msghub",
+  "description": "A simple communication layer for inter-process communcation between mulitple worker processes",
+  "version": "0.1.0",
+  "author": {
+    "name": "Valiton GmbH",
+    "url": "http://www.valiton.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/valiton/node-msghub.git"
+  },
+  "bugs": {
+    "url": "git://github.com/valiton/node-msghub/issues"
+  },
+  "main": "lib/msghub",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt default"
+  },
+  "dependencies": {
+    "simple-pool": "0.1.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.4.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-coffeelint": "~0.0.6",
+    "grunt-jsdoc": "~0.3.1"
+  },
+  "keywords": [
+    "messaging",
+    "cluster",
+    "worker",
+    "ipc",
+    "events"
+  ]
+}
