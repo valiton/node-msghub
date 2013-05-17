@@ -27,7 +27,8 @@ class Msghub extends EventEmitter
   ###
   _send = (args, to) ->
     process.nextTick ->
-      process.send type: 'msghub', event: args[0], msg: args[1], to: to
+      msg = if args.length is 2 then args[1] else args[1..]
+      process.send type: 'msghub', event: args[0], msg: msg, to: to
 
 
   ###*

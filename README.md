@@ -73,6 +73,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+- 0.1.2 send msg as array if more than 1 param is given
+
 - 0.1.1 add hint to various-cluster to readme
 
 - 0.1.0 Initial Release
