@@ -30,6 +30,11 @@ class Msghub extends EventEmitter
       msg = if args.length is 2 then args[1] else args[1..]
       process.send type: 'msghub', event: args[0], msg: msg, to: to
 
+  _distribute = (msg) ->
+    to = @pool[msg.event][msg.to]()
+    return to.send msg unless Array.isArray to
+    to.forEach (_worker) ->
+      _worker.send msg
 
   ###*
    * when a new Listener is added, put it into the SimplePool
@@ -61,11 +66,12 @@ class Msghub extends EventEmitter
         for id, worker of cluster.workers
           worker.on 'message', (msg) =>
             return _addListener.call this, msg if msg.type is 'msghubListener'
-            if msg.type is 'msghub' and @pool[msg.event]?
-              to = @pool[msg.event][msg.to]()
-              return to.send msg unless Array.isArray to
-              to.forEach (_worker) ->
-                _worker.send msg
+            if msg.type is 'msghub'
+              unless @pool[msg.event]?
+                return setTimeout =>
+                  _distribute.call this, msg
+                , 2000
+              _distribute.call this, msg
     else
       @setMaxListeners 0
       @on 'newListener', (listener) ->
